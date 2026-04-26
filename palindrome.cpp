@@ -2,12 +2,24 @@
 using namespace std;
 
 int main(){
-    int x;
+    int n, reversed = 0, remainder, original;
 
     cout<< "Enter a number: ";
-    cin>> x;
+    cin>> n;
+    original = n;
 
-    cout<< "You entered: " << x;
+    while(n != 0){
+        remainder = n % 10;
+        reversed = reversed * 10 + remainder;
+        n /= 10;
+    }
 
+    if (original == reversed){
+        cout<< "The number is Palindrome" << endl;
+    }
+    else{
+        cout<< "The number is not Palindrome" << endl;
+    }
+    
     return 0;
 }
